@@ -14,7 +14,7 @@ import org.jboss.netty.handler.codec.http.*;
 import java.net.InetSocketAddress;
 
 /**
- * Created by lala on 14-1-29.
+ * @author Helmut Steiner
  */
 public class HttpServer extends Service<HttpRequest, HttpResponse> {
     
