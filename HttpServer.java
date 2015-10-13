@@ -48,6 +48,9 @@ public class HttpServer extends Service<HttpRequest, HttpResponse> {
     }
 
     public static void main(String[] args) {
+        /*
+        * set path to /foo/bar
+        */
         HttpMuxer muxService = new HttpMuxer().withHandler("/foo/bar", new HttpServer());
             
         Service service = ResteasyServiceBuilder.get()
@@ -55,7 +58,7 @@ public class HttpServer extends Service<HttpRequest, HttpResponse> {
 
             @Override
             public String getGreeting() {
-              return "Hello, World!";
+              return "Server is up and running";
             }
         } )
            
