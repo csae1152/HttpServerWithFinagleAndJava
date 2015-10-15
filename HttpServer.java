@@ -33,6 +33,8 @@ public class HttpServer extends Service<HttpRequest, HttpResponse> {
             public HttpResponse map(String content) {
                 HttpResponse httpResponse =
                         new DefaultHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK);
+                HttpResponse httpResponseBadRequest =
+                        new DefaultHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.BAD_REQUEST);
                 httpResponse.setContent(ChannelBuffers.wrappedBuffer(content.getBytes()));
                 return httpResponse;
             }
