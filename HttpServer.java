@@ -70,7 +70,7 @@ public class HttpServer extends Service<HttpRequest, HttpResponse> {
         ServerBuilder builder = ServerBuilder.get()
                 .name("HttpServer")
                 .codec(Http.get())
-                .bindTo(new InetSocketAddress("localhost", 8000));
+                .bindTo(new InetSocketAddress("localhost", 8080));
 
         Server server = ServerBuilder.safeBuild(service, builder);
         
