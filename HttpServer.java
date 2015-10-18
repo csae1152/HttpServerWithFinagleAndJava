@@ -54,12 +54,13 @@ public class HttpServer extends Service<HttpRequest, HttpResponse> {
         * set path to /foo/bar
         */
         HttpMuxer muxService = new HttpMuxer().withHandler("/foo/bar", new HttpServer());
+           
             
         Service service = ResteasyServiceBuilder.get()
                 .withEndpoint(new RoutingService() {
 
             @Override
-            public String getGreeting() {
+            public String getInfoMessage() {
               return "Server is up and running";
             }
         } )
