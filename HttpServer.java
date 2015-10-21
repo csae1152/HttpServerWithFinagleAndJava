@@ -16,7 +16,7 @@ import java.net.InetSocketAddress;
 /**
  * @author Helmut Steiner
  */
-public class HttpServer extends Service<HttpRequest, HttpResponse> {
+public class HttpServer extends Service<HttpRequest, HttpResponse> implements Runnable {
     
     
     private Future<String> getContentAsync(HttpRequest request) {
@@ -73,8 +73,9 @@ public class HttpServer extends Service<HttpRequest, HttpResponse> {
                 .codec(Http.get())
                 .bindTo(new InetSocketAddress("localhost", 8080));
 
-        Server server = ServerBuilder.safeBuild(service, builder);
-        
+        public void run() {
+            Server server = ServerBuilder.safeBuild(service, builder);
+        }
         System.out.println("Server start...");
     }
 }
