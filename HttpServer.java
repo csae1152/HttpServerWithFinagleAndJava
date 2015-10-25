@@ -76,6 +76,6 @@ public class HttpServer extends Service<HttpRequest, HttpResponse> implements Ru
         public void run() {
             Server server = ServerBuilder.safeBuild(service, builder);
         }
-        System.out.println("Server start...");
+        System.out.println("Waiting for requests...");
     }
 }
