@@ -56,7 +56,7 @@ public class HttpServer extends Service<HttpRequest, HttpResponse> implements Ru
         * set path to /foo/bar
         */
         HttpMuxer muxService = new HttpMuxer().withHandler("/foo/bar", new HttpServer());
-           
+        HttpMuxer muxIsoServiceBus = new HttpMuxer().withHandler("isoBus/getUser", new HttpServer());
             
         Service service = ResteasyServiceBuilder.get()
                 .withEndpoint(new RoutingService() {
@@ -66,7 +66,7 @@ public class HttpServer extends Service<HttpRequest, HttpResponse> implements Ru
               return "Server is up and running";
             }
         } )
-           
+          
       
                 .build();
         
