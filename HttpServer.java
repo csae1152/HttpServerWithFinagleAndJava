@@ -36,7 +36,9 @@ public class HttpServer extends Service<HttpRequest, HttpResponse> implements Ru
                 HttpResponse httpResponseBadRequest =
                         new DefaultHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.BAD_REQUEST);
                 HttpResponse httpResponseBadRequest =
-                        new DefaultHttpResponse(HttpVersion.HTPP_1_1, HttpResponseStatus.ACCEPTED);
+                        new DefaultHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.ACCEPTED);
+                HttpResponse httpResponsBadRequest =
+                        new DefaultHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.TIMEOUT);
                 httpResponse.setContent(ChannelBuffers.wrappedBuffer(content.getBytes()));
                 return httpResponse;
             }
