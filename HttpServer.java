@@ -24,6 +24,15 @@ public class HttpServer extends Service<HttpRequest, HttpResponse> implements Ru
         // a function to a FuturePool
         return Future.value("content");
     }
+    
+    public <U,V> CompletableFuture<V> thenCombineAsync(
+        CompletableFuture<? extends U> other, 
+        BiFunction<? super T,? super U,? extends V> fn, 
+        Executor executor) {
+            
+          
+            
+        }
 
     public Future<HttpResponse> apply(HttpRequest request) {
 
