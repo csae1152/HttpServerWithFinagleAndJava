@@ -33,6 +33,10 @@ public class HttpServer extends Service<HttpRequest, HttpResponse> implements Ru
           
             
         }
+        
+    private Future<GetFarmData> getFarmId(HttpRequest request) {
+        return Future.value("farmId");
+    }
 
     public Future<HttpResponse> apply(HttpRequest request) {
 
