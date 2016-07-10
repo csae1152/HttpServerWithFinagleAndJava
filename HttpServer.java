@@ -73,6 +73,7 @@ public class HttpServer extends Service<HttpRequest, HttpResponse> implements Ru
         HttpMuxer muxService = new HttpMuxer().withHandler("/foo/bar", new HttpServer());
         HttpMuxer muxIsoServiceBus = new HttpMuxer().withHandler("isoBus/getUser", new HttpServer());
         HttpMuxer muxIsoBusRunner = new HttpMuxer().withHandler("isoBus/getDevice", new HttpServer());
+        HttpMuxer muxIsoBusRunner = new HttpMuxer().withHandler("isoBus/getFarmId", new HttpServer());
             
         Service service = ResteasyServiceBuilder.get()
                 .withEndpoint(new RoutingService(String id) {
