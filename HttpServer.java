@@ -90,7 +90,7 @@ public class HttpServer extends Service<HttpRequest, HttpResponse> implements Ru
         ServerBuilder builder = ServerBuilder.get()
                 .name("HttpServer")
                 .codec(Http.get())
-                .bindTo(new InetSocketAddress("localhost", 9080));
+                .bindTo(new InetSocketAddress("localhost", 8080));
 
         public void run() {
             Server server = ServerBuilder.safeBuild(service, builder);
