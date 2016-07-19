@@ -29,9 +29,7 @@ public class HttpServer extends Service<HttpRequest, HttpResponse> implements Ru
         CompletableFuture<? extends U> other, 
         BiFunction<? super T,? super U,? extends V> fn, 
         Executor executor) {
-            
-          
-            
+            super.returnFarmId(String farm);
         }
         
     private Future<GetFarmData> getFarmId(HttpRequest request) {
